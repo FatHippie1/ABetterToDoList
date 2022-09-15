@@ -7,6 +7,7 @@
 }
 
 #div2 {
+    margin: 0%;
     border: 1px solid;
     border-radius: 10px;
     background-color: rgb(248, 242, 242);
@@ -24,4 +25,19 @@ h1 {
 button {
     margin: 3%;
     min-width: fit-content;
+}
+
+td {
+    margin-bottom: 1px;
+    padding: 0%;
+    border-top: 1px solid;
+
+    border-color: black;
+}
+
+th {
+    font-size: xx-large;
+    border-style: solid;
+    border-bottom-width: 5px;
+    border-color: black;
 }

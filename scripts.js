@@ -1,12 +1,35 @@
 const date = document.getElementById('date');
 const toDo = document.getElementById('todo');
+const submitBtn = document.getElementById('submitBtn');
+const tableItem = document.querySelector('table');
+const remove = document.getElementById('dlt');
+const todos = document.getElementsByClassName('td');
 
 
-document.getElementById('submitBtn').addEventListener('click', submitTodo);
+submitBtn.addEventListener('click', submitTodo);
+remove.addEventListener('click', removeTodo);
 
 function submitTodo() {
-    console.log(date.value);
-    console.log(toDo.value);
+    tableItem.innerHTML += `<td class='td'>${toDo.value}</td><td><input type='checkbox'></td><td><button id="dlt2" type='button'>Delete</button></td>`;
 
 }
-submitTodo();
+
+
+
+function removeTodo() {
+
+    console.log("clicked");
+    //console.log(tableItem)
+    //tableItem.remove();
+
+}
+
+const items = document.querySelectorAll('td');
+
+items.forEach(item => {
+    item.addEventListener('click', e => {
+        //e.target.style.textDecoration = 'line-through';
+        e.target.remove();
+    });
+});
+//<td><input type='checkbox></td>
