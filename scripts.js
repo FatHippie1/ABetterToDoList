@@ -35,11 +35,15 @@ function deleteToDoItem(e) {
 //checkedBox.addEventListener('checked',completeTodo)
 
 function isChecked() {
-    const checkbox = document.querySelector("#createdTodo");
-    const parentTD = checkbox.parentElement;
-    const sibling = parentTD.previousElementSibling;
-    checkbox.style.textDecoration = 'line-through';
-    
+    const checkbox2 = document.querySelector("#createdTodo");
+    //const parentTD = checkbox.parentElement;
+    //const sibling = parentTD.previousElementSibling;
+    if (checkbox.checked){
+    checkbox2.style.textDecoration = 'line-through';
+    }
+    else {
+        checkbox2.style.textDecoration = '';
+    }
     console.log(checkbox.checked);
 
 
