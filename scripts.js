@@ -16,7 +16,7 @@ function createTodo() {
     ${toDo.value}
     </td>
     <td>
-    <input type='checkbox' id="checkbox" onclick="completeTodo(event)">
+    <input type='checkbox' id="checkbox" onclick="isChecked()">
     </td>
     <td>
     <button id="dlt2" onclick="deleteToDoItem(event)" type='button'>Delete</button>
@@ -33,8 +33,27 @@ function deleteToDoItem(e) {
 }
 
 //checkedBox.addEventListener('checked',completeTodo)
-function completeTodo(e) {
-    console.log('got it');
+
+function isChecked() {
+    const checkbox = document.querySelector("#createdTodo");
+    const parentTD = checkbox.parentElement;
+    const sibling = parentTD.previousElementSibling;
+    checkbox.style.textDecoration = 'line-through';
+    
+    console.log(checkbox.checked);
+
+
+/*    const chckbx = document.getElementById('checkbox');
+    const toDo = document.getElementById('createdTodo');
+
+    if (chckbx.checked) {
+        toDo.previousSiblingElement.setAttribute.textDecoration='line-through'
+    }
+    else {
+        toDo.setAttribute('textDecoration','')
+    }
+  */
+    /*console.log('got it');
     
     const checkBox = e.target;
     const completedTodo = checkBox.parentElement;
@@ -42,7 +61,7 @@ function completeTodo(e) {
     console.log(actualCompletedTodo.style.textDecoration);
     completedTodo.style.textDecoration = 'line-through';
     //e.target.style.textDecoration = 'line-through';
-    
+    */
     }
 
 //function removeTodo() {
