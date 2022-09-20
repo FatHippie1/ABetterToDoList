@@ -21,10 +21,7 @@ function createTodo() {
     <td>
     <button id="dlt2" onclick="deleteToDoItem(event)" type='button'>Delete</button>
     </td>`;
-
-
 }
-
 
 function deleteToDoItem(e) {
     const button = e.target;
@@ -32,6 +29,7 @@ function deleteToDoItem(e) {
     const parentTR = parentTD.parentElement;
     const siblingTD = parentTD.previousElementSibling;
     const sibChildTD = siblingTD.querySelector('#checkbox');
+
     if (sibChildTD.checked) {
         parentTR.remove();
     }
@@ -50,4 +48,3 @@ function isChecked(e) {
         siblingTD.style.textDecoration = '';
     }
 };
-
