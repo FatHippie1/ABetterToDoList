@@ -30,9 +30,11 @@ function deleteToDoItem(e) {
     const button = e.target;
     const parentTD = button.parentElement;
     const parentTR = parentTD.parentElement;
-
-    parentTR.remove();
-
+    const siblingTD = parentTD.previousElementSibling;
+    const sibChildTD = siblingTD.querySelector('#checkbox');
+    if (sibChildTD.checked) {
+        parentTR.remove();
+    }
 
 }
 
@@ -47,26 +49,5 @@ function isChecked(e) {
     else {
         siblingTD.style.textDecoration = '';
     }
-    return isChecked(checkbox);
 };
-
-//function deleteCompleted(checkbox) {
-   //let c = checkbox;
-    //if (checkbox) {
-        //console.log('yes');
-    //}
-    //deleteToDoItem();
-    //isChecked();
-    //const a = checkbox;
-    //const b = button;
-    //if (checkbox && button) {
-    //console.log(a, 'got checkblx');
-    //parentTR.remove();
-
-    //deleteToDoItem();
-    //}
-
-//};
-//deleteCompleted();
-
 
