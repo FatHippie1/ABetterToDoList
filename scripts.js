@@ -1,14 +1,15 @@
-const date = document.getElementById('date');
 const toDo = document.getElementById('todo');
 const submitBtn = document.getElementById('submitBtn');
 const tableItem = document.querySelector('table');
-const remove = document.getElementById('dlt');
-const todos = document.getElementsByClassName('td');
-const checkedBox = document.getElementById('checkbox');
 
 
 submitBtn.addEventListener('click', createTodo);
-
+toDo.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        submitBtn.click();
+    }
+});
 
 function createTodo() {
     tableItem.innerHTML += `
@@ -19,12 +20,15 @@ function createTodo() {
     <input type='checkbox' id="checkbox" onclick="isChecked(event)">
     </td>
     <td>
-    <button id="dlt2" onclick="deleteToDoItem(event)" type='button'>Delete</button>
+    <button id="dlt2"  type='button'><i id="" class="fa-solid fa-trash" onclick="deleteToDoItem(event)"></i></button>
     </td>`;
+    toDo.value = '';
+
 }
 
 function deleteToDoItem(e) {
-    const button = e.target;
+    const tshcan = e.target;
+    const button = tshcan.parentElement;
     const parentTD = button.parentElement;
     const parentTR = parentTD.parentElement;
     const siblingTD = parentTD.previousElementSibling;
