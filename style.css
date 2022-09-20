@@ -1,0 +1,51 @@
+#div1 {
+    margin-right: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: black;
+    background-color: rgb(248, 242, 242);
+}
+
+#div2 {
+    margin: 0%;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(248, 242, 242);
+}
+
+#dlt2 {
+    border: none;
+}
+
+body {
+    background-image: linear-gradient(120deg, gray, black);
+    min-height: 100vh;
+}
+
+h1 {
+    color: aliceblue;
+}
+
+button {
+    margin: 3%;
+    min-width: fit-content;
+}
+
+table {
+    table-layout: fixed;
+}
+
+th {
+    font-size: xx-large;
+    border-style: solid;
+    border-bottom-width: 5px;
+    border-color: black;
+}
+
+td {
+    margin-bottom: 1px;
+    padding: 0%;
+    border-top: 1px solid;
+    border-color: black;
+    word-wrap: break-word;
+}
